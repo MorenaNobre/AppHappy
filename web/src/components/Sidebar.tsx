@@ -6,6 +6,7 @@ import mapMarkerImg from "../images/marker-map.svg";
 
 import "../styles/components/sidebar.css";
 
+// eslint-disable-next-line
 export default function Sidebar() {
   const { goBack } = useHistory();
 
