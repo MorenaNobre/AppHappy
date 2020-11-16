@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FiPlus, FiArrowRight } from "react-icons/fi";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 
 import mapMarkerImg from "../images/marker-map.svg";
 import mapIcon from "../utils/mapIcon";
@@ -39,7 +39,7 @@ function OrphanagesMap() {
           <span>Sorocaba</span>
         </footer>
       </aside>
-      <MapContainer
+      <Map
         center={[-23.4889765, -47.4782195]}
         zoom={16}
         style={{ width: "100%", height: "100%" }}
@@ -70,7 +70,7 @@ function OrphanagesMap() {
             </Marker>
           );
         })}
-      </MapContainer>
+      </Map>
       <Link to="/orphanages/create" className="create-orphanage">
         <FiPlus size={32} color="#fff" />
       </Link>

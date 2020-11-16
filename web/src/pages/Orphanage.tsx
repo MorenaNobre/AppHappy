@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 // import { FaWhatsapp } from "react-icons/fa";
 import { FiClock, FiInfo } from "react-icons/fi";
-import { MapContainer, Marker, TileLayer } from "react-leaflet";
+import { Map, Marker, TileLayer } from "react-leaflet";
 import { useParams } from "react-router-dom";
 
 import Sidebar from "../components/Sidebar";
@@ -28,9 +28,10 @@ interface OrphanageParams {
   id: string;
 }
 
-// eslint-disable-next-line
+ // eslint-disable-next-line
 export default function Orphanage() {
   const params = useParams<OrphanageParams>();
+   // eslint-disable-next-line
   const [orphanage, setOrphanage] = useState<Orphanage>();
   const [activeImageIndex, setActiveImageIndex] = useState(0)
 
@@ -77,7 +78,7 @@ export default function Orphanage() {
             <p>{orphanage.about}</p>
 
             <div className="map-container">
-              <MapContainer
+              <Map
                 center={[orphanage.latitude, orphanage.longitude]}
                 zoom={16}
                 style={{ width: "100%", height: 280 }}
@@ -95,7 +96,7 @@ export default function Orphanage() {
                   icon={mapIcon}
                   position={[orphanage.latitude, orphanage.longitude]}
                 />
-              </MapContainer>
+              </Map>
 
               <footer>
                 <a target="_blank" rel="noopener noreferrer" href={`https://www.google.com/maps/dir/?api=1&destination=${orphanage.latitude},${orphanage.longitude}`}>Ver rotas no Google Maps</a>
